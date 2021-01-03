@@ -1,0 +1,265 @@
+{% extends "portfolio/main.html" %}
+{% load static %}
+{% block content %}
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+	</ol>
+	<div class="carousel-inner">
+		<div class="carousel-item active">
+			<img class="bd-placeholder-img" width="100%" height="100%" src="{% static '/images/1.png' %}">
+			<div class="container">
+				<div class="carousel-caption text-left">
+					<h1 class="raleway">What is <strong>Parfait</strong>?</h1>
+					<p>Parfait is a core HR Services company with expertise in processing HR transactional activities, hence it has a deeper knowledge of how the processes should be run for better efficiency              </p>
+					<p><a class="btn btn-lg btn-primary" href="{% url 'dropbox' %}" role="button">Apply Today</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="carousel-item">
+			<svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+			<img class="bd-placeholder-img" width="100%" height="100%" src="{% static '/images/2.png' %}">
+			<div class="container">
+				<div class="carousel-caption">
+					<h1>Our Priority is<br><strong>Quality Time & Client Satisfaction</strong></h1>
+					<p>Uncompromising commitment to the quality of the work:<br>that is quality data, information and solutions.</p>
+					<p><a class="btn btn-lg btn-primary" href="#conventSection" role="button">Learn more</a></p>
+				</div>
+			</div>
+		</div>
+		<div class="carousel-item">
+			<svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+			<img class="bd-placeholder-img" width="100%" height="100%" src="{% static '/images/3.png' %}">
+			<div class="container">
+				<div class="carousel-caption text-right">
+					<h1><strong>Clients</strong> are Everywhere and Everything…</h1>
+					<p>because for us Client is the first priority!</p>
+					<p><a class="btn btn-lg btn-primary" href="{% url 'clientele' %}" role="button">View Clients</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	</a>
+</div>
+
+<!-- About Section-->
+<section class="row justify-content-center section-1">
+	<div class="col-7" style="padding: 40px;">
+		<h2 class="display-4 section-header">About us</h2>
+		<br>
+		<p style="margin-left: 50px;">Parfait HR Solutions is a growing firm, providing its services to various sectors. We are focusing mostly in maintaining high standards of ethics & fair play has become our working philosophy, which has helped us to meet our client’s requirements & building ending relationships.</p>
+		<button  style="margin-left: 50px;" href="{% url 'about' %}" class='btn btn-primary'>Read More</button>
+	</div>
+	<div class="col-5 align-self-center">
+		<img class="zoom" src="{% static 'images/logo-full.png'%}">
+	</div>
+	<div class="row justify-content-md-center">
+		<h2 class="display-4 section-header">Top Opportunities</h2>
+	</div>
+	<div class="row">
+        {% for job in jobs %}
+        <div class="col-3">
+            <div class="job-card">
+				<div class="row">
+					<h5 class="col job-title">{{job.job_title}}</h5>
+					<p class="col company">{{job.company_name}}</p>
+				</div>
+                <hr style="border-color: #e00061;">
+                <div class="row">
+                    <div class="col-6">
+                        <p><strong>Salary</strong> : {{job.salary}}</p>
+                    </div>
+                    <div class="col-6">
+                        <p><strong>Vacancy</strong> : {{job.vacancies}}</p>
+                    </div>
+                </div>                
+                <p><strong>Status</strong> : {{job.status}}</p>
+            </div>
+        </div>    
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Company Philosophy -->
+<section class="row justify-content-center section-2">
+    <div class="col-5 align-self-center">
+        <img width="100%" src="{% static 'images/phil.png'%}">
+    </div>
+    <div class="col-7 justify-content-right" style="padding: 40px; text-align: center;">
+        <h2 class="display-4 section-header">The Philosophy</h2>
+        <br>
+        <p><strong>We</strong> understand <strong>who</strong> the <strong>Client</strong> is...</p>
+        <p><strong>We</strong> understand <strong>what</strong> the <strong>Client</strong> is...</p>
+        <p><strong>We</strong> understand <strong>how</strong> the <strong>Client</strong> is...</p>
+        <p><strong>We</strong> understand <strong>why, when and where</strong> the <strong>Client</strong> uses the services...</p>
+        <p><strong>We</strong> recommend <strong>what</strong> services best match the <strong>Client</strong>'s' needs...</p>
+        <br>
+        <p style="font-size: 20px"><strong>Client is Everywhere and Everything…</strong><br>because for us Client is the first priority!</p>    
+    </div>
+</section>
+
+<!-- Comparison Section -->
+<section class="section-1">
+	<div class="container row align-items-center ">
+		<div class="col-5">
+			<h2 class="display-5 section-header">Our Priority is<br><strong>Quality Time & Client Satisfaction</strong></h2>
+		</div>
+		<div class="col-7">
+			<div class="row">	
+				<div class="col-6">
+					<div class="row convent">
+						<div class="col-2">
+							<svg width="2em" viewBox="0 0 16 16" class="bi bi-check-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+								<path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+							</svg>
+						</div>
+						<div class="col-10 justify-content-center">
+							<p>Interaction with Client’s Authorized Person</p>
+						</div>
+					</div>
+					<div class="row convent">
+						<div class="col-2">
+							<svg width="2em" viewBox="0 0 16 16" class="bi bi-check-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+								<path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+							</svg>
+						</div>
+						<div class="col-10 justify-content-center">
+							<p>Manpower Requisition raised through prescribed JD Format
+							</p>
+						</div>
+					</div>
+					<div class="row convent">
+						<div class="col-2">
+							<svg width="2em" viewBox="0 0 16 16" class="bi bi-check-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+								<path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+							</svg>
+						</div>
+						<div class="col-10 justify-content-center">
+							<p>Query on JD	</p>
+						</div>
+					</div>
+					<div class="row convent">
+						<div class="col-2">
+							<svg width="2em" viewBox="0 0 16 16" class="bi bi-check-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+								<path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+							</svg>
+						</div>
+						<div class="col-10 justify-content-center">
+							<p>CV sourcing & screening of profiles as per JD with 2 level of screening</p>
+						</div>
+					</div>
+					<div class="row convent">
+						<div class="col-2">
+							<svg width="2em" viewBox="0 0 16 16" class="bi bi-check-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+								<path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+							</svg>
+						</div>
+						<div class="col-10 justify-content-center">
+							<p>CV forwarded to Client</p>
+						</div>
+					</div>				
+				</div>
+				<!-- New Method -->
+				<div class="col-6">
+					<div class="row new">
+						<div class="col-2">
+							<svg width="2em" viewBox="0 0 16 16" class="bi bi-x-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+								<path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+							</svg>
+						</div>
+						<div class="col-10 justify-content-center">
+							<p>Candidate joins Company</p>
+						</div>
+					</div>
+					<div class="row new">
+						<div class="col-2">
+							<svg width="2em" viewBox="0 0 16 16" class="bi bi-x-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+								<path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+							</svg>
+						</div>
+						<div class="col-10 justify-content-center">
+							<p>Joining Formalities</p>
+						</div>
+					</div>
+					<div class="row new">
+						<div class="col-2">
+							<svg width="2em" viewBox="0 0 16 16" class="bi bi-x-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+								<path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+							</svg>
+						</div>
+						<div class="col-10 justify-content-center">
+							<p>Candidate(s) selected</p>
+						</div>
+					</div>
+					<div class="row new">
+						<div class="col-2">
+							<svg width="2em" viewBox="0 0 16 16" class="bi bi-x-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+								<path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+							</svg>
+						</div>
+						<div class="col-10 justify-content-center">
+							<p>Interview lined up for the shortlisted candidate<p>
+						</div>
+					</div>
+					<div class="row new">
+						<div class="col-2">
+							<svg width="2em" viewBox="0 0 16 16" class="bi bi-x-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+								<path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+							</svg>
+						</div>
+						<div class="col-10 justify-content-center">
+							<p>Profile shortlisted<p>
+						</div>
+					</div>						
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<!-- Services Section -->
+<section class="col justify-content-center section-2">
+	<div class="row justify-content-md-center">
+		<h2 class="display-4 section-header">Recruitement Services</h2>
+	</div>
+	<div class="row">
+		<div class="col service">
+			<img height="200px" src="{% static 'images/s1.png' %}">
+			<h3 class="feature">Offer Management</h3>
+		</div>
+		<div class="col service">
+			<img height="200px" src="{% static 'images/s2.png' %}">
+			<h3 class="feature">Pre Joining & Post Joining activities</h3>
+		</div>
+		<div class="col service">
+			<img height="200px" src="{% static 'images/s3.png' %}">
+			<h3 class="feature">Recruitment Activities</h3>
+		</div>
+		<div class="col service">
+			<img height="200px" src="{% static 'images/s4.png' %}">
+			<h3 class="feature">Vendor Management</h3>
+		</div>          
+	</div>
+</section>
+{% endblock %}

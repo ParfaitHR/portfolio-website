@@ -1,0 +1,112 @@
+{% extends "portfolio/main.html" %}
+{% load static %}
+{% block content %}
+
+<section>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="bd-placeholder-img" width="100%" height="100%" src="{% static '/images/cover.png' %}">
+            <div class="container">
+                <div class="carousel-caption text-right">
+                    <h1 class="raleway"><strong>Parfait</strong> Services</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Recruitment Services Section -->
+<section class="col section-1 justify-content-center">
+    <h2 class="display-4 section-header" style="text-align: center;">Recruitement Services</h2>
+    <div class="row">
+        <div class="col service">
+            <img height="200px" src="{% static 'images/s1.png' %}">
+            <h3 class="feature">Offer Management</h3>
+        </div>
+        <div class="col service">
+            <img height="200px" src="{% static 'images/s2.png' %}">
+            <h3 class="feature">Pre Joining & Post Joining activities</h3>
+        </div>
+        <div class="col service">
+            <img height="200px" src="{% static 'images/s3.png' %}">
+            <h3 class="feature">Recruitment Activities</h3>
+        </div>
+        <div class="col service">
+            <img height="200px" src="{% static 'images/s4.png' %}">
+            <h3 class="feature">Vendor Management</h3>
+        </div>          
+    </div>
+</section>
+
+<!-- Scope of Services Section -->
+<section class="col section-2 justify-content-center">
+    <h2 class="display-4 section-header" style="text-align: center;">Scope of Services</h2>
+    <div class="row">
+        <div class="col service">
+            <img height="140px" src="{% static 'images/sc1.png' %}">
+            <h5>Manpower Sourcing as per Client’s Requirement</h5>
+        </div>
+        <div class="col service">
+            <img height="140px" src="{% static 'images/sc2.png' %}">
+            <h5>Reference Checking & Assistance in Completing Compliance</h5>
+        </div>
+        <div class="col service">
+            <img height="140px" src="{% static 'images/sc3.png' %}">
+            <h5>Deployment of Manpower as per Client’s Requirement</h5>
+        </div>
+        <div class="col service">
+            <img height="140px" src="{% static 'images/sc4.png' %}">
+            <h5>Acting as the Bridge between the Resources and Client/s</h5>
+        </div>                  
+        <div class="col service">
+            <img height="140px" src="{% static 'images/sc5.png' %}">
+            <h5>Support our client/s so that they focus on their core business<h5>
+        </div>          
+    </div>
+</section>
+
+<!-- Payroll & Compliance Section -->
+<section class="col section-1 justify-content-center">
+    <div class="row">
+        <div class="col" style="margin: 20px; text-align: center;">
+            <h2 class="display-4" id="Services" style="text-align: center; font-weight: bold;">Payroll<br>Management</h2>
+            <img width=90% src="{% static 'images/m1.png' %}">
+        </div>
+        <div class="col" style="margin: 20px; text-align: center;">
+            <h2 class="display-4" id="Services" style="text-align: center; font-weight: bold;">Compliance<br>Management</h2>
+            <img width=90% src="{% static 'images/m2.png' %}">
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="col section-2 justify-content-center">
+    <h2 class="display-4" id="Services" style="text-align: center; font-weight: bold;">Benefits</h2>
+    <div class="row">
+        <div class="col" style="margin: 20px;">
+            <h3 class="display-5" id="Services" style="text-align: center; font-weight: bold;">Manpower<br>Outsourcing</h2>
+            <hr style="border-color: white;">
+            <br>
+            <ul>
+                <li>Above all the Company Gains Access to World-Class Capabilities</li>
+                <li>Enables the Management to focus on their core Business and Strategic Planning</li>
+                <li>Relaxes the companies from the updating of Laws related to Labour, Salaries and Compensations</li>
+                <li>Free internal resources for other purposes</li>
+                <li>The organization becomes free from all kinds of Legal and Statutory Risks and Liabilities</li>
+                <li>Manpower outsourcing reduces & controls Operating Costs of the Organization</li>
+            </ul>
+        </div>
+        <div class="col" style="margin: 20px;">
+            <h3 class="display-5" id="Services" style="text-align: center; font-weight: bold;">Online<br>Recruiting</h2>
+            <hr style="border-color: white;">
+            <br>
+            <ul>
+                <li>Managing the Talent Supply Chain effectively requires constant innovation to enhance process efficiency and effectiveness. Recruitment Services as we call it, is “Power of Choice” to deliver a service that meets the need of clients.</li>
+                <li>Our Recruitment Services set comprehensive activities designed for efficient delivery a large no. of candidate database and/or a sizable pool of empanelled vendors/recruitment consultants; it opens new avenues and opportunities for improving processes along with cost arbitrage.
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

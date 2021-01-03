@@ -1,0 +1,23 @@
+body {
+    font-family: 'Poppins'; 
+}
+
+.navbar-brand {
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.btn-primary {
+    background-color:#e00061;
+    border-color: #e00061;
+}
+
+.btn-primary:hover {
+    background-color:white;
+    border-color: #e00061;
+    color: #e00061;
+}
+
+.display-5 {
+    font-weight: bold;
+}

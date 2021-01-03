@@ -1,0 +1,1 @@
+web: gunicorn ParfaitHR.wsgi --log-file -

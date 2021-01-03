@@ -1,0 +1,52 @@
+.section-1 {
+  padding: 50px;
+  align-content: center;
+}
+
+.section-2 {
+  padding: 50px;
+  background-color: #e00061;
+  color: white;
+}
+
+.section-header {
+  font-weight: bold;
+  margin: 50px;
+}
+
+.btn-info {
+    color: #e00061;
+}
+
+.clientele-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.clientele-column {
+  flex: 25%;
+  max-width: 15%;
+  padding: 0 4px;
+}
+
+.clientele-column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  padding: 5px;
+}
+
+@media screen and (max-width: 800px) {
+  .clientele-column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .clientele-column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
